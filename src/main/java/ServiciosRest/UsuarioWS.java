@@ -34,7 +34,6 @@ public class UsuarioWS {
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("listar")
     public List<Usuario> ListarUsuarios() {
         return DAOUsuario.ListarUsuarios();
     }

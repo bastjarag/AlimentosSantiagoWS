@@ -59,6 +59,7 @@ public class DAOUsuario {
     public static ArrayList<Usuario> ListarUsuarios() {
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         ResultSet resultSet = Conexion.RealizarConsulta("select * from usuarios");
+        System.out.println("Consultando usuario");
         if (resultSet != null) {
             try {
                 while (resultSet.next()) {

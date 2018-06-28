@@ -44,7 +44,7 @@ public class DAOProducto {
     }
     
     public static List<Producto> ListarProductos() {
-        ResultSet resultado = Conexion.RealizarConsulta("SELECT * FROM BJARA.PRODUCTOS");
+        ResultSet resultado = Conexion.RealizarConsulta("SELECT * FROM BJARA.PRODUCTOS order by productos.nombre");
         List<Producto> productos = new ArrayList<Producto>();
         if (resultado == null)
             return null;
