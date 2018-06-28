@@ -9,6 +9,7 @@ import DAO.DAOProducto;
 import Entidades.Producto;
 import java.util.List;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -41,5 +42,11 @@ public class ProductosWS {
     @Produces(MediaType.TEXT_PLAIN)
     public String ActualizarProductos(Producto producto) {
         return String.valueOf(DAOProducto.ActualizarProducto(producto));
+    }
+    
+    @DELETE
+    @Path("/{id}")
+    public String BorrarProducto(@PathParam("id") int id) {
+        return String.valueOf(DAOProducto.BorrarProducto(id));
     }
 }

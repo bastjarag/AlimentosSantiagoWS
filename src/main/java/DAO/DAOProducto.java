@@ -103,4 +103,23 @@ public class DAOProducto {
         }
         return producto;
     }
+    
+    public static boolean BorrarProducto(int id) {
+        CallableStatement cs = Conexion.CrearCallableStatement("call SP_ELIMINAR_PRODUCTO(?,?)");
+        if (cs == null)
+            return false;
+        
+        int cambios = 0;
+        try {
+            cs.setInt("IN_ID_PRODUCTO", id);
+            cs.registerOutParameter("OUT_RPTA", Types.INTEGER);
+            cs.execute();
+            cambios = cs.getInt("OUT_RPTA");
+            System.out.println("Eliminadas " + cambios + " filas.");
+        }
+        catch (SQLException exc) {
+            System.out.println(exc);
+        }
+        return cambios >= 1;
+    }
 }
