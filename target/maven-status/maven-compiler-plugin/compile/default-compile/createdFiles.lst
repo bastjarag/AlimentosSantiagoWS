@@ -18,6 +18,7 @@ Entidades\DetallePedido.class
 DAO\DAOVendedor.class
 Entidades\EmpresaConvenio.class
 Entidades\EstadoPedido.class
+ServiciosRest\ProductosWS.class
 EntidadTemporal\LoginCredencial.class
 REST\TestWS.class
 DAO\DAOPedido.class

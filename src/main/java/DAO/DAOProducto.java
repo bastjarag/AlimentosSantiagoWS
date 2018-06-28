@@ -26,6 +26,7 @@ public class DAOProducto {
         if (cs == null)
             return false;
         
+        int cambios = 0;
         try {
             cs.setString("IN_NOMBRE", producto.nombre);
             cs.setInt("IN_PRECIO", producto.precio);
@@ -33,13 +34,13 @@ public class DAOProducto {
             cs.setInt("IN_STOCK", producto.stock);
             cs.registerOutParameter("OUT_RPTA", Types.INTEGER);
             cs.execute();
-            System.out.println("Numero filas insertadas: " + cs.getInt("OUT_RPTA"));
-            return true;
+            cambios = cs.getInt("OUT_RPTA");
+            System.out.println("Numero filas insertadas: " + cambios);
         }
         catch (SQLException exc) {
             System.err.print(exc);
         }
-        return false;
+        return cambios >= 1;
     }
     
     public static List<Producto> ListarProductos() {
@@ -60,17 +61,46 @@ public class DAOProducto {
         return productos;
     }
     
-    public static Producto ActualizarProducto(Producto producto) {
-        CallableStatement cs = Conexion.CrearCallableStatement("call SP_MODIFICAR_PRODUCTO(?,?,?,?,?)");
+    public static boolean ActualizarProducto(Producto producto) {
+        CallableStatement cs = Conexion.CrearCallableStatement("call SP_MODIFICAR_PRODUCTO(?,?,?,?,?,?)");
+        int cambios = 0;
         if (cs == null)
-            return null;
+            return false;
         
+        System.out.println("Actualizando producto de id: " + producto.id + " a " + producto.nombre);
+        System.out.println(producto);
         try {
             cs.setInt("IN_ID_PRODUCTO", producto.id);
+            cs.setString("IN_NOMBRE", producto.nombre.trim());
+            cs.setInt("IN_PRECIO", producto.precio);
+            cs.setString("IN_DESCRIPCION", producto.descripcion.trim());
+            cs.setInt("IN_STOCK", producto.precio);
+            cs.registerOutParameter("OUT_RPTA", Types.INTEGER);
+            cs.execute();
+            cambios = cs.getInt("OUT_RPTA");
+            System.out.println("Numero filas actualizadas: " + cambios);
         }
         catch (SQLException exc) {
             System.out.println(exc);
         }
-        return new Producto();
+        return cambios >= 1;
+    }
+    
+    public static Producto TraerProducto(int id) {
+        Producto producto = new Producto();
+        ResultSet resultado = Conexion.RealizarConsulta("SELECT * FROM BJARA.PRODUCTOS WHERE ID_PRODUCTO = 1");
+        try {
+            if (resultado.next()) {
+                producto.id = resultado.getInt("ID_PRODUCTO");
+                producto.nombre = resultado.getString("NOMBRE");
+                producto.precio = resultado.getInt("PRECIO");
+                producto.descripcion = resultado.getString("DESCRIPCION");
+                producto.stock = resultado.getInt("STOCK");
+            }
+        }
+        catch (SQLException exc) {
+            System.out.println(exc);
+        }
+        return producto;
     }
 }
