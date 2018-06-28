@@ -61,6 +61,16 @@ public class DAOProducto {
     }
     
     public static Producto ActualizarProducto(Producto producto) {
-        CallableStatement cs = Conexion.CrearCallableStatement("call ");
+        CallableStatement cs = Conexion.CrearCallableStatement("call SP_MODIFICAR_PRODUCTO(?,?,?,?,?)");
+        if (cs == null)
+            return null;
+        
+        try {
+            cs.setInt("IN_ID_PRODUCTO", producto.id);
+        }
+        catch (SQLException exc) {
+            System.out.println(exc);
+        }
+        return new Producto();
     }
 }
