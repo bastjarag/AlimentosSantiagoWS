@@ -24,11 +24,12 @@ import java.util.logging.Logger;
  */
 public class DAOUsuario {
 
-    public static boolean Insertar(Usuario usuario) {
+    public static Usuario Insertar(Usuario usuario) {
         CallableStatement call = Conexion.CrearCallableStatement("{call sp_agregar_usuario(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
         if (call == null) {
-            return false;
+            return null;
         }
+        
         try {
             call.setDate("IN_FECHA_REGISTRO", new Date(System.currentTimeMillis()));
             call.setString("IN_NOMBRES", usuario.nombre);
@@ -47,13 +48,13 @@ public class DAOUsuario {
             call.execute();
             System.out.println("Numero filas insertadas: " + call.getInt("OUT_RPTA"));
             call.close();
-            return true;
+            return TraerUsuario(usuario.nombre);
         } catch (SQLException exc) {
             System.err.println("Error al insertar usuario");
             System.err.println(exc.getErrorCode());
             System.err.println(exc.getMessage());
         }
-        return false;
+        return null;
     }
 
     public static ArrayList<Usuario> ListarUsuarios() {

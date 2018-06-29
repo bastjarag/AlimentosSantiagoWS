@@ -49,4 +49,11 @@ public class UsuarioWS {
         
         return "false";
     }
+    
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Usuario Agregar(Usuario usuario) {
+        return DAOUsuario.Insertar(usuario);
+    }
 }
