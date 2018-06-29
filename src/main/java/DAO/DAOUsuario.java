@@ -158,6 +158,7 @@ public class DAOUsuario {
     }
 
     public static Usuario LoginUsuario(String nombreUsuario, String password) {
+        //%s pone string
         String query = "SELECT count(*) as EXISTENCIA FROM BJARA.USUARIOS WHERE USUARIO = '%s' and PW='%s'";
         query = String.format(query, nombreUsuario, password);
         ResultSet resultado = Conexion.RealizarConsulta(query);

@@ -156,14 +156,7 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public int getMonedero() {
-        return cartera;
-    }
-
-    public void setMonedero(int monedero) {
-        this.cartera = monedero;
-    }
+   
 
     public String getUsuario() {
         return usuario;
