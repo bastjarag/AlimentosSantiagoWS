@@ -7,13 +7,18 @@ package ServiciosRest;
 
 import DAO.DAOUsuario;
 import EntidadTemporal.LoginCredencial;
+import EntidadTemporal.TicketLogin;
 import Entidades.Usuario;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -23,6 +28,7 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("usuario")
 public class UsuarioWS {
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.TEXT_PLAIN)
@@ -31,22 +37,30 @@ public class UsuarioWS {
         return "encuentra: " + usuario;
         //return DAOUsuario.TraerUsuario(usuario).usuario + "/" + usuario;
     }
-    
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Usuario> ListarUsuarios() {
         return DAOUsuario.ListarUsuarios();
     }
-    
+
     @POST
-    @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)    
     @Path("login")
-    public String Login(LoginCredencial login) {
+    public TicketLogin Login(LoginCredencial login) {
         Usuario usuario = DAOUsuario.LoginUsuario(login.usuario, login.password);
-        if (usuario != null)
-            return "true";
-        
-        return "false";
+       
+        if (usuario != null) {
+            return new TicketLogin(usuario.usuario, new Date(System.currentTimeMillis()));
+        }
+        return null;
+    }
+
+    @DELETE
+    @Path("/{rut}&{dv_rut}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String Borrar(@PathParam("rut") int rut, @PathParam("dv_rut") String dv_rut) {
+        return String.valueOf(DAOUsuario.BorrarUsuario(rut, dv_rut.charAt(0)));
     }
 }
