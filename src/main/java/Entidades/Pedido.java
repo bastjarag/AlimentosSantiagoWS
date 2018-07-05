@@ -5,6 +5,7 @@
  */
 package Entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Date;
 public class Pedido {
     public int id;
     public boolean retiroTienda;
-    public Date fechaHora;
+    public Date fechaHora;   
     public String comentario;
     public int idEstado;
     public int idUsuario;
@@ -23,6 +24,7 @@ public class Pedido {
     public Pedido(boolean retiroTienda, Date fechaHora, String comentario, int idEstado, int idUsuario, int totalCompra) {
         this.retiroTienda = retiroTienda;
         this.fechaHora = fechaHora;
+        //this.fechaHora = new Date();       
         this.comentario = comentario;
         this.idEstado = idEstado;
         this.idUsuario = idUsuario;
