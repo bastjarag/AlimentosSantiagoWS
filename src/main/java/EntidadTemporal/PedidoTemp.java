@@ -4,51 +4,29 @@
  * and open the template in the editor.
  */
 package EntidadTemporal;
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> 69d1020f5e5b2b158ce2b5f8ac993769d9a736c1
 import Entidades.Menu;
 import Entidades.Pedido;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> 69d1020f5e5b2b158ce2b5f8ac993769d9a736c1
 /**
  *
  * @author Basti
  */
-<<<<<<< HEAD
 public class PedidoTemp {
 
     public int id;
     public boolean retiroTienda;
     public String fechaHora;
-=======
-public class PedidoTemp {    
-    public int id;
-    public boolean retiroTienda;
-    public String fechaHora;   
->>>>>>> 69d1020f5e5b2b158ce2b5f8ac993769d9a736c1
     public String comentario;
     public int idEstado;
     public int idUsuario;
     public int totalCompra;
-<<<<<<< HEAD
 
     public PedidoTemp() {
     }
 
-=======
-  
-    public PedidoTemp() {
-    }    
- 
->>>>>>> 69d1020f5e5b2b158ce2b5f8ac993769d9a736c1
     public PedidoTemp(int id, boolean retiroTienda, String fechaHora, String comentario, int idEstado, int idUsuario, int totalCompra) {
         this.id = id;
         this.retiroTienda = retiroTienda;
@@ -114,13 +92,7 @@ public class PedidoTemp {
     public void setTotalCompra(int totalCompra) {
         this.totalCompra = totalCompra;
     }
-<<<<<<< HEAD
 
-=======
- 
-    
-   
->>>>>>> 69d1020f5e5b2b158ce2b5f8ac993769d9a736c1
     public Pedido ToPedido() {
         SimpleDateFormat df = new SimpleDateFormat("YYYY-MM-DD");
         Pedido pedido = null;
@@ -132,14 +104,3 @@ public class PedidoTemp {
         return pedido;
     }
 }
-<<<<<<< HEAD
-=======
-
-/* int id;
-    public boolean retiroTienda;
-    public String fechaHora;   
-    public String comentario;
-    public int idEstado;
-    public int idUsuario;
-    public int totalCompra;*/
->>>>>>> 69d1020f5e5b2b158ce2b5f8ac993769d9a736c1

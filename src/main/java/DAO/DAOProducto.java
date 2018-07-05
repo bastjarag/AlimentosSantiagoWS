@@ -38,8 +38,6 @@ public class DAOProducto {
             cs.execute();
             cambios = cs.getInt("OUT_RPTA");
             System.out.println("Numero filas insertadas: " + cambios);
-            cs.close();
-            return true;
         } catch (SQLException exc) {
             System.err.print(exc);
         }

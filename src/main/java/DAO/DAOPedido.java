@@ -6,7 +6,6 @@
 package DAO;
 
 import Conexion.Conexion;
-import EntidadTemporal.PedidoTemp;
 import Entidades.Pedido;
 import java.sql.CallableStatement;
 import java.sql.SQLException;
@@ -29,11 +28,7 @@ public class DAOPedido {
         try {
             cs.setBoolean("IN_IS_RETIRO_TIENDA", pedido.retiroTienda);
             //aqui se cae            
-<<<<<<< HEAD
             cs.setDate("IN_FECHA_HORA", new Date(pedido.fechaHora.getTime()));
-=======
-            cs.setString("IN_FECHA_HORA", pedido.fechaHora);
->>>>>>> 69d1020f5e5b2b158ce2b5f8ac993769d9a736c1
             cs.setString("IN_COMENTARIO", pedido.comentario);
             //cs.setInt("IN_ID_ESTADO", pedido.idEstado);
             cs.setInt("IN_ID_USUARIO", pedido.idUsuario);
@@ -81,8 +76,4 @@ public class DAOPedido {
         return PedidosDeResultSet(Conexion.RealizarConsulta("select * from VIEW_LISTAR_PEDIDOS_ACEPTADOS"));
     }
     
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 69d1020f5e5b2b158ce2b5f8ac993769d9a736c1
