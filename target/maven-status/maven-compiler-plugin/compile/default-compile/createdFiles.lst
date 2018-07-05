@@ -1,12 +1,9 @@
 DAO\DAOTEC.class
 Entidades\Usuario.class
-Entidades\MenuProducto.class
-Entidades\Producto.class
 Conexion\Conexion.class
-ServiciosRest\EmpresaConvenioWS.class
+EntidadTemporal\PedidoTemp.class
 Entidades\Menu.class
 Entidades\TEC.class
-Entidades\Vendedor.class
 Entidades\Proveedor.class
 DAO\DAOMenu.class
 DAO\DAODetallePedido.class
@@ -15,25 +12,20 @@ DAO\DAOFactura.class
 REST\RestWSApplication.class
 DAO\DAOEstadoPedido.class
 DAO\DAOProductoProveedor.class
-Entidades\DetallePedido.class
-DAO\DAOVendedor.class
 Entidades\EmpresaConvenio.class
 Entidades\EstadoPedido.class
+<<<<<<< HEAD
 ServiciosRest\PedidoWS.class
 ServiciosRest\ProductosWS.class
 DAO\DAOProductoMenu.class
+=======
+>>>>>>> 69d1020f5e5b2b158ce2b5f8ac993769d9a736c1
 EntidadTemporal\LoginCredencial.class
 EntidadTemporal\TicketLogin.class
-REST\TestWS.class
-DAO\DAOPedido.class
-DAO\DAOProveedor.class
-Entidades\Factura.class
 Entidades\Pedido.class
 Entidades\SolicitudEnLinea.class
-DAO\DAOProducto.class
 ServiciosRest\MenuWS.class
 Entidades\ProductoMenu.class
-Utilidades\TicketManager.class
 DAO\DAOUsuario.class
 ServiciosRest\ProductoMenuWS.class
 ServiciosRest\UsuarioWS.class

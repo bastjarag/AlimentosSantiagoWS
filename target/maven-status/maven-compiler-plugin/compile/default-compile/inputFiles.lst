@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\REST\TestWS.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\ServiciosRest\EmpresaConvenioWS.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\DAO\DAOEmpresaConvenio.java
@@ -40,3 +41,47 @@ F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\Entidades\MenuProducto.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\Entidades\ProductoProveedor.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\REST\RestWSApplication.java
+=======
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\ServiciosRest\MenuWS.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\Factura.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\Menu.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOUsuario.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOPedido.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOProducto.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Utilidades\Ticket.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOVendedor.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\EntidadTemporal\LoginCredencial.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOEstadoPedido.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\MenuProducto.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\ServiciosRest\PedidosWS.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\Proveedor.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\EntidadTemporal\TicketLogin.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOProveedor.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOSolicitudEnLinea.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\ProductoMenu.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Utilidades\TicketManager.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\REST\RestWSApplication.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAODetallePedido.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\EntidadTemporal\PedidoTemp.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOProductoProveedor.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOProductoMenu.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOTEC.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\ServiciosRest\UsuarioWS.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\Producto.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOEmpresaConvenio.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\Vendedor.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\ProductoProveedor.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\Pedido.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\TEC.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOMenu.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\SolicitudEnLinea.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\DetallePedido.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\Usuario.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\REST\TestWS.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Conexion\Conexion.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\DAO\DAOFactura.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\EmpresaConvenio.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\ServiciosRest\ProductosWS.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\Entidades\EstadoPedido.java
+C:\Users\Basti\Documents\GitHub\AlimentosSantiagoWS\src\main\java\ServiciosRest\EmpresaConvenioWS.java
+>>>>>>> 69d1020f5e5b2b158ce2b5f8ac993769d9a736c1
