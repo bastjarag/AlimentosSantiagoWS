@@ -15,19 +15,39 @@ public class Menu {
     public int id;
     public Date fechaCreacion;
     public int idUsuario;
-    public String diaDeSemana;
+    public Date fechaPublicacion;
 
-    public Menu(Date fechaCreacion, int idUsuario, String diaDeSemana) {
-        this.fechaCreacion = fechaCreacion;
-        this.idUsuario = idUsuario;
-        this.diaDeSemana = diaDeSemana;
+    public int getId() {
+        return id;
     }
 
-    public Menu(int id, Date fechaCreacion, int idUsuario, String diaDeSemana) {
+    public void setId(int id) {
         this.id = id;
-        this.fechaCreacion = fechaCreacion;
-        this.idUsuario = idUsuario;
-        this.diaDeSemana = diaDeSemana;
     }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public Date getFechaPublicacion() {
+        return fechaPublicacion;
+    }
+
+    public void setFechaPublicacion(Date fechaPublicacion) {
+        this.fechaPublicacion = fechaPublicacion;
+    }
+    
     
 }

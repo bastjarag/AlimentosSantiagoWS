@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package DAO;
+
+import Entidades.Menu;
+import java.sql.CallableStatement;
+import Conexion.Conexion;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.sql.Types;
+
+/**
+ *
+ * @author Sebastián
+ */
+public class DAOMenu {
+    public static Menu Insertar(Menu menu) {
+        CallableStatement cs = Conexion.CrearCallableStatement("call SP_CREAR_MENU(?,?,?,?)");
+        System.out.println("Insertando menu.");
+        try {
+            cs.setDate("IN_FECHA_CREACION", new Date(menu.fechaCreacion.getTime()));
+            cs.setInt("IN_ID_USUARIO", menu.idUsuario);
+            cs.setDate("IN_FECHA_PUBLICACION", new Date(menu.fechaPublicacion.getTime()));
+            cs.registerOutParameter("OUT_ID_MENU", Types.INTEGER);
+            cs.execute();
+            menu.id = cs.getInt("OUT_ID_MENU");
+            System.out.println("Menu registrado...");
+        }
+        catch (SQLException exc) {
+            System.err.println(exc);
+        }
+        return menu;    
+    }
+}

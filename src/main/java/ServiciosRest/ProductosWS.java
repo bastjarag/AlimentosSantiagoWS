@@ -6,7 +6,9 @@
 package ServiciosRest;
 
 import DAO.DAOProducto;
+import DAO.DAOProductoMenu;
 import Entidades.Producto;
+import Entidades.ProductoMenu;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -46,7 +48,26 @@ public class ProductosWS {
     
     @DELETE
     @Path("/{id}")
+    @Produces(MediaType.TEXT_PLAIN)
     public String BorrarProducto(@PathParam("id") int id) {
         return String.valueOf(DAOProducto.BorrarProducto(id));
+    }
+    
+    @GET
+    @Path("/productos_stock")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Producto> ListarProductosConStock() {
+        return DAOProducto.ListarProductosConStock();
+    }
+    
+    @POST
+    @Path("/registrar_prod_menu")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Producto> RegistrarProductoMenu(ProductoMenu[] productos) {
+        for (ProductoMenu producto : productos) {
+            DAOProductoMenu.Insertar(producto);
+        }
+        return DAOProducto.ListarProductosConStock();
     }
 }

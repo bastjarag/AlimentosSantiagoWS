@@ -80,8 +80,9 @@ public class DAOUsuario {
         return usuarios;
     }
 
-    public static Usuario ActualizarUsuario(Usuario usuario) {
+    public static boolean ActualizarUsuario(Usuario usuario) {
         CallableStatement call = Conexion.CrearCallableStatement("{call SP_MODIFICAR_USUARIO(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+        int cambio = 0;
         try {
             call.setDate("IN_FECHA_REGISTRO", new Date(System.currentTimeMillis()));
             call.setString("IN_NOMBRES", usuario.nombre);
@@ -98,13 +99,13 @@ public class DAOUsuario {
             call.setInt("IN_CARTERA", usuario.cartera);
             call.registerOutParameter("OUT_RPTA", Types.INTEGER);
             call.execute();
-            System.out.println("Numero filas insertadas: " + call.getInt("OUT_RPTA"));
+            cambio = call.getInt("OUT_RPTA");
+            System.out.println("Numero filas insertadas: " + cambio);
             call.close();
-            return TraerUsuario(usuario.nombre);
         } catch (SQLException exc) {
             System.err.println(exc);
         }
-        return usuario;
+        return cambio >= 1;
     }
 
     public static boolean BorrarUsuario(int rut, char digVerif) {

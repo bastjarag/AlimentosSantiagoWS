@@ -21,11 +21,13 @@ import java.util.logging.Logger;
  * @author Sebastián
  */
 public class DAOProducto {
+
     public static boolean AgregarProducto(Producto producto) {
         CallableStatement cs = Conexion.CrearCallableStatement("call SP_AGREGAR_PRODUCTO(?,?,?,?,?)");
-        if (cs == null)
+        if (cs == null) {
             return false;
-        
+        }
+
         int cambios = 0;
         try {
             cs.setString("IN_NOMBRE", producto.nombre);
@@ -36,37 +38,23 @@ public class DAOProducto {
             cs.execute();
             cambios = cs.getInt("OUT_RPTA");
             System.out.println("Numero filas insertadas: " + cambios);
-        }
-        catch (SQLException exc) {
+        } catch (SQLException exc) {
             System.err.print(exc);
         }
         return cambios >= 1;
     }
-    
+
     public static List<Producto> ListarProductos() {
-        ResultSet resultado = Conexion.RealizarConsulta("SELECT * FROM BJARA.PRODUCTOS order by productos.nombre");
-        List<Producto> productos = new ArrayList<Producto>();
-        if (resultado == null)
-            return null;
-        
-        try {
-            while (resultado.next()) {                
-                Producto producto = new Producto(resultado.getInt("ID_PRODUCTO"), resultado.getString("NOMBRE"), 
-                        resultado.getInt("PRECIO"), resultado.getString("DESCRIPCION"), resultado.getInt("STOCK"));
-                productos.add(producto);
-            }
-        } catch (SQLException exc) {
-            System.out.println(exc);
-        }
-        return productos;
+        return ProductosDeResultSet(Conexion.RealizarConsulta("SELECT * FROM BJARA.PRODUCTOS order by productos.nombre"));
     }
-    
+
     public static boolean ActualizarProducto(Producto producto) {
         CallableStatement cs = Conexion.CrearCallableStatement("call SP_MODIFICAR_PRODUCTO(?,?,?,?,?,?)");
         int cambios = 0;
-        if (cs == null)
+        if (cs == null) {
             return false;
-        
+        }
+
         System.out.println("Actualizando producto de id: " + producto.id + " a " + producto.nombre);
         System.out.println(producto);
         try {
@@ -79,13 +67,12 @@ public class DAOProducto {
             cs.execute();
             cambios = cs.getInt("OUT_RPTA");
             System.out.println("Numero filas actualizadas: " + cambios);
-        }
-        catch (SQLException exc) {
+        } catch (SQLException exc) {
             System.out.println(exc);
         }
         return cambios >= 1;
     }
-    
+
     public static Producto TraerProducto(int id) {
         Producto producto = new Producto();
         ResultSet resultado = Conexion.RealizarConsulta("SELECT * FROM BJARA.PRODUCTOS WHERE ID_PRODUCTO = 1");
@@ -97,18 +84,18 @@ public class DAOProducto {
                 producto.descripcion = resultado.getString("DESCRIPCION");
                 producto.stock = resultado.getInt("STOCK");
             }
-        }
-        catch (SQLException exc) {
+        } catch (SQLException exc) {
             System.out.println(exc);
         }
         return producto;
     }
-    
+
     public static boolean BorrarProducto(int id) {
         CallableStatement cs = Conexion.CrearCallableStatement("call SP_ELIMINAR_PRODUCTO(?,?)");
-        if (cs == null)
+        if (cs == null) {
             return false;
-        
+        }
+
         int cambios = 0;
         try {
             cs.setInt("IN_ID_PRODUCTO", id);
@@ -116,10 +103,31 @@ public class DAOProducto {
             cs.execute();
             cambios = cs.getInt("OUT_RPTA");
             System.out.println("Eliminadas " + cambios + " filas.");
-        }
-        catch (SQLException exc) {
+        } catch (SQLException exc) {
             System.out.println(exc);
         }
         return cambios >= 1;
+    }
+
+    public static List<Producto> ListarProductosConStock() {
+        return ProductosDeResultSet(Conexion.RealizarConsulta("select * from VIEW_LISTAR_PRODUCTOS_EN_STOCK"));
+    }
+
+    public static List<Producto> ProductosDeResultSet(ResultSet resultado) {
+        if (resultado == null) {
+            return new ArrayList<>();
+        }
+
+        List<Producto> productos = new ArrayList<>();
+        try {
+            while (resultado.next()) {
+                Producto producto = new Producto(resultado.getInt("ID_PRODUCTO"), resultado.getString("NOMBRE"),
+                        resultado.getInt("PRECIO"), resultado.getString("DESCRIPCION"), resultado.getInt("STOCK"));
+                productos.add(producto);
+            }
+        } catch (SQLException exc) {
+            System.out.println(exc);
+        }
+        return productos;
     }
 }
