@@ -46,4 +46,11 @@ public class ProductoMenu {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    @Override
+    public String toString() {
+        return "ProductoMenu{" + "idProducto=" + idProducto + ", idMenu=" + idMenu + ", stock=" + stock + '}';
+    }
+    
+    
 }

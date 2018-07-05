@@ -17,6 +17,24 @@ public class Menu {
     public int idUsuario;
     public Date fechaPublicacion;
 
+    public Menu() {
+    }
+
+    public Menu(Date fechaCreacion, int idUsuario, Date fechaPublicacion) {
+        this.fechaCreacion = fechaCreacion;
+        this.idUsuario = idUsuario;
+        this.fechaPublicacion = fechaPublicacion;
+    }
+
+    public Menu(int id, Date fechaCreacion, int idUsuario, Date fechaPublicacion) {
+        this.id = id;
+        this.fechaCreacion = fechaCreacion;
+        this.idUsuario = idUsuario;
+        this.fechaPublicacion = fechaPublicacion;
+    }
+
+    
+    
     public int getId() {
         return id;
     }

@@ -1,6 +1,7 @@
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\REST\TestWS.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\ServiciosRest\EmpresaConvenioWS.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\DAO\DAOEmpresaConvenio.java
+F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\ServiciosRest\ProductoMenuWS.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\DAO\DAODetallePedido.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\DAO\DAOVendedor.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\Entidades\Factura.java
@@ -20,6 +21,7 @@ F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\DAO\DAOFactura.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\EntidadTemporal\LoginCredencial.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\DAO\DAOMenu.java
+F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\ServiciosRest\PedidoWS.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\DAO\DAOEstadoPedido.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\Entidades\DetallePedido.java
 F:\Duoc\Integración de Sistemas\AlimentosSantiago\AlimentosSantiagoRest\src\main\java\DAO\DAOSolicitudEnLinea.java

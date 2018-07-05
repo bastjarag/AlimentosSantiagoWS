@@ -9,14 +9,32 @@ import Entidades.Menu;
 import java.sql.CallableStatement;
 import Conexion.Conexion;
 import java.sql.Date;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Sebastián
  */
 public class DAOMenu {
+    
+    public static List<Menu> ListarMenu() {
+        ResultSet rs = Conexion.RealizarConsulta("select * from BJARA.MENUS");
+        List<Menu> menus = new ArrayList<>();
+        try {
+            while (rs.next()) {
+                Menu menu = new Menu(rs.getDate("FECHA_CREACION"), rs.getInt("ID_USUARIO"), rs.getDate("FECHA_VENTA"));
+                menus.add(menu);
+            }
+        } catch (SQLException exc) {
+            System.out.println(exc);
+        }
+        return menus;
+    }
+    
     public static Menu Insertar(Menu menu) {
         CallableStatement cs = Conexion.CrearCallableStatement("call SP_CREAR_MENU(?,?,?,?)");
         System.out.println("Insertando menu.");

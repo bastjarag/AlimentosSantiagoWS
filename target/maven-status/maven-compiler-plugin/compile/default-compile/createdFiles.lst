@@ -19,6 +19,7 @@ Entidades\DetallePedido.class
 DAO\DAOVendedor.class
 Entidades\EmpresaConvenio.class
 Entidades\EstadoPedido.class
+ServiciosRest\PedidoWS.class
 ServiciosRest\ProductosWS.class
 DAO\DAOProductoMenu.class
 EntidadTemporal\LoginCredencial.class
@@ -34,6 +35,7 @@ ServiciosRest\MenuWS.class
 Entidades\ProductoMenu.class
 Utilidades\TicketManager.class
 DAO\DAOUsuario.class
+ServiciosRest\ProductoMenuWS.class
 ServiciosRest\UsuarioWS.class
 Utilidades\Ticket.class
 DAO\DAOEmpresaConvenio.class

@@ -59,15 +59,4 @@ public class ProductosWS {
     public List<Producto> ListarProductosConStock() {
         return DAOProducto.ListarProductosConStock();
     }
-    
-    @POST
-    @Path("/registrar_prod_menu")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Producto> RegistrarProductoMenu(ProductoMenu[] productos) {
-        for (ProductoMenu producto : productos) {
-            DAOProductoMenu.Insertar(producto);
-        }
-        return DAOProducto.ListarProductosConStock();
-    }
 }
